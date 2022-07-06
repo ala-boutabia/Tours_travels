@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'adventure/css/base.css' %}">
+</head>
+<body>
+    <!-- =================== NavBar =================== -->
+    <nav>
+        <div class="container nav__container">
+            <a href="#" class="logo"><h3>Adventure</h3></a>
+            <ul class="nav__menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">About</a></li>
+                <li class="ctn"><a href="#">Contact</a></li>
+            </ul>
+            <button id="open-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <button id="close-menu-btn"><i class="fa-solid fa-xmark"></i></button>
+            
+        </div>
+    </nav>
+
+    <!-- =================== Header =================== -->
+   <header>
+    <div class="header-content">
+        <h2>I DON'T KNOW WHERE I'M GOING <span>-FROM HERE-</span> BUT I PROMISE IT WON'T BE BORING</h2>
+        <div class="line"></div>
+        <h1>And So The Adventure Begins</h1>
+        <a href="#" class="ctn">Learn More</a>
+    </div>
+   </header>
+    
+   <!-- =================== Events =================== -->
+
+   <section class="events">
+        <div class="title">
+            <h1>Upcoming Events</h1>
+            <div class="line"></div>
+        </div>
+        <div class="events-grid">
+            <div class="col">
+                <div class="image-col">
+                    <img src="{%  static 'adventure/images/img_01.jpg' %}" alt="">
+                </div>
+                <h4>Everest Camp Trek</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi possimus, nemo iste quos nihil ex sapiente! Veniam autem suscipit aspernatur similique dolores,</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <div class="image-col">
+                    <img src="{%  static 'adventure/images/img_02.jpg' %}" alt="">
+                </div>
+                <h4>Everest Camp Trek</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi possimus, nemo iste quos nihil ex sapiente! Veniam autem suscipit aspernatur similique dolores,</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <div class="image-col">
+                    <img src="{%  static 'adventure/images/img_02.jpg' %}" alt="">
+                </div>
+                <h4>Everest Camp Trek</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi possimus, nemo iste quos nihil ex sapiente! Veniam autem suscipit aspernatur similique dolores,</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <div class="image-col">
+                    <img src="{%  static 'adventure/images/img_02.jpg' %}" alt="">
+                </div>
+                <h4>Everest Camp Trek</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi possimus, nemo iste quos nihil ex sapiente! Veniam autem suscipit aspernatur similique dolores,</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore -->
+
+    <section class="explore">
+        <div class="explore-content">
+            <h1>EXPLORE THE WORLD</h1>
+            <div class="line"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, aliquam illo. Culpa id esse commodi, molestiae repellendus quaerat omnis deserunt animi magni placeat delectus ad voluptatem enim aperiam inventore tempora!</p> 
+            <a href="" class="btn-explore">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Tours -->
+
+    <section class="tours">
+        <div class=" tours_left tours__container">
+            <div class="tours__left">
+                <h1>Upcoming Tours</h1>
+                <h2>
+                    We take you beyond the average tourist experience
+                </h2>    
+                <a href="" class="btn">Learn More</a>
+            </div>
+            <div class="tours__right">
+                <!-- 1 -->
+                {% for tour in tours %}                
+                <article class="tour">
+                    <h5>{{ tour.title }}</h5>
+                    <p>{{ tour.description }}</p>
+                    <a href="{% url 'tour-detail' tour.slug %}" class="ctn">Explore More</a>
+                </article>
+                {% endfor %}
+                <!-- 2 -->
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= END OF CATEGORIES SECTION ======================= -->
+
+    <!-- Footer -->
+    <section class="footer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Copyright c 2022 Alaeddine</p>
+    </section>
+
+    <script src="{%  static 'adventure/js/main.js' %}" ></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+
+{% load static %}
+
+
+
+
+  <link rel="stylesheet" href="{% static 'adventure/css/tour-detail.css' %}">
+
+
+
+
+<article>
+  
+
+  <section id="location">
+    <h2>{{ tour_title }}</h2>
+    <address>This tour takes place in <span>{{ tour_description }}</span> </address>
+  </section>
+
+  <section id="details">
+    <h2>What's This Tour About?</h2>
+    <p>{{ tour_description }}</p>
+    <footer>
+      <p>Need more details? Please <a href="mailto:{{ meetup.organizer_email }}">contact the organizer</a> (but don't spam us ;-)).</p>
+    </footer>
+  </section>
+
+  
+</article>
+
